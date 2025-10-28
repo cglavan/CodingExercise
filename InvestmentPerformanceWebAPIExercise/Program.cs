@@ -9,6 +9,7 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
+using System.Reflection;
 
 namespace InvestmentPerformanceWebAPIExercise
 {
@@ -65,6 +66,11 @@ namespace InvestmentPerformanceWebAPIExercise
                         Array.Empty<string>()
                     }
                 });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
 
