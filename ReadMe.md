@@ -65,7 +65,14 @@ Logging level is configured using the "LoggingLevel" entry of the appSettings.js
 
 # xUnit test
 
-Basic tests are included in the InvestmentPerformaceApiTest.csproj project.  These tests can be run using the .NET CLI or Visual Studio Test Explorer.  The tests cover the main functionality of the API endpoints.  The specific commands that I used during testing are as follows:
+Basic tests are included in the InvestmentPerformaceApiTest.csproj project.  The test performs the following:
+
+1. Uses an in-memory database for testing purposes.
+2. Adds an investment for a user.
+3. Retrieves the list of investments for the user and verifies that the added investment is present in the list.
+4. Retrieves the investment details for the added investment and verifies that the details match.
+
+These tests can be run using the .NET CLI or Visual Studio Test Explorer.  The tests cover the main functionality of the API endpoints.  The specific commands that I used during testing are as follows:
 
 	dotnet restore
 	dotnet build
