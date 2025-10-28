@@ -63,4 +63,14 @@ The database(s) are stored in my personal Azure subscription.  I will provide pu
 
 Logging level is configured using the "LoggingLevel" entry of the appSettings.json file.  The current configuration is set to log "debug" level messages in a development environment and "warning" level messages in a production environment.  Environments are configured using the appropriate appsettings.json file for the desired environment.
 
+# xUnit test
 
+Basic tests are included in the InvestmentPerformaceApiTest.csproj project.  These tests can be run using the .NET CLI or Visual Studio Test Explorer.  The tests cover the main functionality of the API endpoints.  The specific commands that I used during testing are as follows:
+
+	dotnet restore
+	dotnet build
+	dotnet test
+
+The results of running the tests are as follows:
+
+	Test summary: total: 2, failed: 0, succeeded: 2, skipped: 0, duration: 27.8s
